@@ -1,5 +1,6 @@
 package com.example.Act5MiravetePerezJuan.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,6 +36,7 @@ public class Libro implements Serializable {
     private Editorial editorial;
 
     @ManyToMany(mappedBy = "libros", fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Libreria> librerias;
 
     public Libro(String titulo, double precio, Autor autor, Editorial editorial) {

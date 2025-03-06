@@ -32,6 +32,7 @@ public class LibreriaController {
         return "La libreria " + libreria.getNombre() + " ha sido agregada correctamente";
     }
 
+    //http://localhost:8080/libreria/nombre
     @GetMapping("/nombre")
     public ResponseEntity<List<Libreria>> getLibreria(@RequestParam String nombre){
         return new ResponseEntity<>(libreriaService.getLibreriasNombre(nombre),HttpStatus.OK);

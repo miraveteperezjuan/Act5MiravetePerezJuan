@@ -1,11 +1,13 @@
 package com.example.Act5MiravetePerezJuan.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -28,7 +30,8 @@ public class Autor {
     private Date fechaNacimiento;
 
     @OneToMany(mappedBy = "autor", fetch = FetchType.LAZY)
-    private List<Libro> libros;
+    @JsonIgnore
+    private List<Libro> libros = new ArrayList<>();
 
     public Autor() {
     }

@@ -28,7 +28,7 @@ public class LibroController {
     @PostMapping("addLibro")
     public String addLibro(@RequestBody Libro libro){
         libroService.agregarLibro(libro);
-        return "Libro agregado correctamente" + libro.getTitulo();
+        return "Libro agregado correctamente " + libro.getTitulo();
     }
 
     //http://localhost:8080/libro/todosLibros

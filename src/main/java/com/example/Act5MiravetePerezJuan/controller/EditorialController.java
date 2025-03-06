@@ -24,7 +24,7 @@ public class EditorialController {
     @PostMapping("addEditorial")
     public String addAutores(@RequestBody Editorial editorial){
         editorialService.agregarEditorial(editorial);
-        return "Editorail agregada correctamente con nombre" + editorial.getNombre();
+        return "Editorail agregada correctamente con nombre " + editorial.getNombre();
     }
 
 }

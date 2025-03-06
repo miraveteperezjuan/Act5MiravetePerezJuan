@@ -3,12 +3,11 @@ package com.example.Act5MiravetePerezJuan.controller;
 import com.example.Act5MiravetePerezJuan.model.Autor;
 import com.example.Act5MiravetePerezJuan.service.AutorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+
 import java.util.List;
 
 //http://localhost:8080/autor/
@@ -30,7 +29,7 @@ public class AutorController {
     @PostMapping("addAutores")
     public String addAutores(@RequestBody Autor autor){
        autorService.agregarAutor(autor);
-       return "Autor agregado correctamente con nombre" + autor.getNombre();
+       return "Autor agregado correctamente con nombre " + autor.getNombre();
     }
 
     //http://localhost:8080/autor/todosAutores
